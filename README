@@ -78,3 +78,6 @@ The Task Application Backend provides the following API endpoints:
 - `POST /api/tasks/complete/:taskId`: Update a specific task.
 
 ---
+This is the hosted url of the backend
+- https://corali-backend.onrender.com
+---
