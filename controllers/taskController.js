@@ -36,9 +36,11 @@ export const deleteTask = async (req, res) => {
 export const completeTask = async (req, res) => {
     const { id } = req.params;
     try {
-        const task = await TaskModel.findByIdAndUpdate({_id: id}, {is_complete : true});
+        const tasktochangecompletestate = await TaskModel.findById({_id: id});
+        const task = await TaskModel.findByIdAndUpdate({_id: id}, {is_complete : !tasktochangecompletestate.is_complete});
         res.status(200).json(task);
     } catch (error) {
         res.status(400).json({msg: error.message})
     }
 }
+
